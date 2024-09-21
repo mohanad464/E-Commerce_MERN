@@ -9,24 +9,26 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import CartProvider from "./context/Auth/Cart/CartProvider";
 import CheckoutPage from "./pages/CheckoutPage";
 import OrderSuccessPage from "./pages/OrderSuccessPage";
+import MyOrdersPage from "./pages/MyOrdersPage";
 
 function App() {
   return (
     <AuthProvider>
       <CartProvider>
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route element={<ProtectedRoute />}>
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/checkout" element= {<CheckoutPage />} />
-          <Route path="/order-success" element= {<OrderSuccessPage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="/checkout" element={<CheckoutPage />} />
+              <Route path="/order-success" element={<OrderSuccessPage />} />
+              <Route path="/My-orders" element={<MyOrdersPage />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
       </CartProvider>
     </AuthProvider>
   );

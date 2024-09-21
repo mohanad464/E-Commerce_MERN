@@ -4,8 +4,11 @@ interface AuthContextType {
   username: string | null;
   token: string | null;
   isAuthenticated: boolean;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  myOrders: any[];
   login: (username: string, token: string) => void;
   logout: () => void;
+  getMyOrders: () => void;
 }
 
 export const AuthContext = createContext<AuthContextType>({
@@ -13,7 +16,9 @@ export const AuthContext = createContext<AuthContextType>({
   token: null,
   login: () => {},
   isAuthenticated: false,
+  myOrders: [],
   logout: () => {},
+  getMyOrders: () => {},
 });
 
 export const useAuth = () => useContext(AuthContext);

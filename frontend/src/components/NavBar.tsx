@@ -37,6 +37,11 @@ function NavBar() {
     navigate("/login");
   };
 
+  const handleMyOrders = () => {
+    navigate("/my-orders");
+    handleCloseUserMenu();
+  }
+
   const handleLogout = () => {
     logout();
     navigate("/");
@@ -134,7 +139,7 @@ function NavBar() {
                     open={Boolean(anchorElUser)}
                     onClose={handleCloseUserMenu}
                   >
-                    <MenuItem onClick={handleCloseUserMenu}>
+                    <MenuItem onClick={handleMyOrders}>
                       <Typography textAlign="center">My Orders</Typography>
                     </MenuItem>
                     <MenuItem onClick={handleLogout}>
