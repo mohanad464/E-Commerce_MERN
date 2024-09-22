@@ -52,6 +52,10 @@ function NavBar() {
     navigate("/cart");
   };
 
+  const handleRegister = () => {
+    navigate("/register")
+  }
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -148,13 +152,19 @@ function NavBar() {
                   </Menu>
                 </>
               ) : (
-                <Button
-                  variant="contained"
-                  color="success"
-                  onClick={handleLogin}
-                >
-                  Login
-                </Button>
+                <><Button
+                    variant="contained"
+                    color="success"
+                    onClick={handleLogin}
+                  >
+                    Login
+                  </Button><Button
+                    variant="contained"
+                    color="success"
+                    onClick={handleRegister}
+                  >
+                      Register
+                    </Button></>
               )}
             </Box>
           </Box>
